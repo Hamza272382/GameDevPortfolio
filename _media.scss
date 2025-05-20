@@ -1,0 +1,253 @@
+/* Base styles (for large screens) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+body {
+    background-color: var(--primary-color);
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    color: var(--text-color);
+    transition: all 0.4s ease-in-out;
+}
+
+header {
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.section {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    padding: 3rem 18rem;
+    transform: translateY(-100%) scale(0);
+    transition: all 0.4s ease-in-out;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    display: none;
+}
+
+/* Media Queries */
+
+/* For devices with a width of 1200px or greater (Desktop) */
+@media screen and (min-width: 1200px) {
+    /* Adjustments for large screens */
+    .section {
+        padding: 3rem 18rem;
+    }
+
+    .header-content {
+        grid-template-columns: repeat(2, 1fr);
+        margin-left: -250px;
+        margin-bottom: 500%;
+    }
+
+    .img {
+        width: 300px;
+        height: 300px;
+    }
+
+    .right-header {
+        margin-left: 20%;
+        padding-right: 5rem;
+    }
+}
+
+/* For devices between 768px and 1199px (Tablets & Laptops) */
+@media screen and (max-width: 1199px) and (min-width: 768px) {
+    .section {
+        padding: 3rem 10rem;
+    }
+
+    .header-content {
+        grid-template-columns: repeat(2, 1fr);
+        margin-left: -150px;
+    }
+
+    .img {
+        width: 250px;
+        height: 250px;
+    }
+
+    .right-header {
+        margin-left: 15%;
+    }
+
+    .about-container {
+        padding-top: 2rem;
+        padding-bottom: 3rem;
+    }
+
+    .progress-bars {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .portfolio-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+}
+
+/* For devices between 576px and 767px (Mobile landscape) */
+@media screen and (max-width: 767px) and (min-width: 576px) {
+    .section {
+        padding: 3rem 5rem;
+    }
+
+    .header-content {
+        grid-template-columns: 1fr;
+    }
+
+    .img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .right-header {
+        margin-left: 0;
+        padding-right: 3rem;
+    }
+
+    .main-title h2 {
+        font-size: 2.5rem;
+    }
+
+    .about-container {
+        padding-top: 2rem;
+        padding-bottom: 3rem;
+    }
+
+    .game-card {
+        border-left: 4px solid var(--highlight-color);
+    }
+
+    .portfolio-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+/* For devices smaller than 576px (Mobile Portrait) */
+@media screen and (max-width: 575px) {
+    .section {
+        padding: 2rem;
+    }
+
+    .header-content {
+        grid-template-columns: 1fr;
+    }
+
+    .img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .right-header {
+        padding-right: 2rem;
+    }
+
+    .main-title h2 {
+        font-size: 1.8rem;
+    }
+
+    .game-card {
+        border-left: 2px solid var(--highlight-color);
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-container {
+        padding-top: 1rem;
+        padding-bottom: 2rem;
+    }
+
+    
+}
+
+@media screen and (max-width: 1024px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .right-header {
+        margin-left: 0;
+        padding: 1rem;
+    }
+
+    .img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .name {
+        font-size: 1.8rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .header-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+        gap: 1.5rem;
+        margin: 0;
+    }
+
+    .left-header {
+        margin: 0;
+    }
+
+    .img {
+        width: 180px;
+        height: 180px;
+        margin: 0;
+    }
+
+    .right-header {
+        margin: 0;
+        padding: 0 1rem;
+        text-align: center;
+    }
+
+    .name {
+        font-size: 1.5rem;
+    }
+
+    .btn-cont {
+        margin-top: 1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header-content {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .right-header {
+        margin: 0; /* remove bottom and left margins */
+        padding: 0 1rem;
+        text-align: center;
+    }
+
+    .img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .name {
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .btn-cont {
+        margin-top: 1rem;
+    }
+}
