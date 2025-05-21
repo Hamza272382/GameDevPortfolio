@@ -30,6 +30,35 @@ header {
     display: none;
 }
 
+@media screen and (max-width: 600px) {
+  header {
+    padding: 0 !important;
+  }
+
+  header .right-header {
+    padding: 2rem !important;
+    margin-bottom: 50px !important;
+  }
+
+  .controlls {
+    top: auto !important;
+    bottom: 0 !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 100% !important;
+    height: auto !important; 
+    
+  }
+
+  .controlls .control {
+    margin: 1rem 0.3rem !important;
+
+    
+  }
+}
+
 /* Media Queries */
 
 /* For devices with a width of 1200px or greater (Desktop) */
@@ -43,6 +72,7 @@ header {
         grid-template-columns: repeat(2, 1fr);
         margin-left: -250px;
         margin-bottom: 500%;
+        height: auto;
     }
 
     .img {
@@ -126,7 +156,10 @@ header {
     .portfolio-grid {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
+    
 }
+
+
 
 /* For devices smaller than 576px (Mobile Portrait) */
 @media screen and (max-width: 575px) {
@@ -429,11 +462,12 @@ header {
 
   .about-container {
     flex-direction: column;
+    
   }
 
   .left-about, .right-about {
     width: 100%;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.5rem; 
   }
 
   .about-stats .progress-bars {
@@ -441,7 +475,7 @@ header {
   }
 
   .progress-con {
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
   }
 
@@ -486,7 +520,7 @@ header {
     font-size: 1rem;
   }
 }
-@media (max-width: 600px) {
+@media (max-width: 770px) {
   /* Example: Buttons inside .btn-cont (header), .game-buttons (projects), .submit-btn (contact form) */
 
   /* Header Download CV button container */
@@ -499,6 +533,7 @@ header {
   .btn-cont .main-btn {
     flex: 1 1 auto;
     text-align: center;
+    justify-content: center;
   }
 
   /* Project buttons container */
