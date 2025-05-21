@@ -1,0 +1,568 @@
+/* Base styles (for large screens) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+body {
+    background-color: var(--primary-color);
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    color: var(--text-color);
+    transition: all 0.4s ease-in-out;
+}
+
+header {
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.section {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    padding: 3rem 18rem;
+    transform: translateY(-100%) scale(0);
+    transition: all 0.4s ease-in-out;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+  header {
+    padding: 0 !important;
+  }
+
+  header .right-header {
+    padding: 2rem !important;
+    margin-bottom: 50px !important;
+  }
+
+  .controlls {
+    top: auto !important;
+    bottom: 0 !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 100% !important;
+    height: auto !important; 
+    
+  }
+
+  .controlls .control {
+    margin: 1rem 0.3rem !important;
+
+    
+  }
+}
+
+/* Media Queries */
+
+/* For devices with a width of 1200px or greater (Desktop) */
+@media screen and (min-width: 1200px) {
+    /* Adjustments for large screens */
+    .section {
+        padding: 3rem 18rem;
+    }
+
+    .header-content {
+        grid-template-columns: repeat(2, 1fr);
+        margin-left: -250px;
+        margin-bottom: 500%;
+        height: auto;
+    }
+
+    .img {
+        width: 300px;
+        height: 300px;
+    }
+
+    .right-header {
+        margin-left: 20%;
+        padding-right: 5rem;
+    }
+}
+
+/* For devices between 768px and 1199px (Tablets & Laptops) */
+@media screen and (max-width: 1199px) and (min-width: 768px) {
+    .section {
+        padding: 3rem 10rem;
+    }
+
+    .header-content {
+        grid-template-columns: repeat(2, 1fr);
+        margin-left: -150px;
+    }
+
+    .img {
+        width: 250px;
+        height: 250px;
+    }
+
+    .right-header {
+        margin-left: 15%;
+    }
+
+    .about-container {
+        padding-top: 2rem;
+        padding-bottom: 3rem;
+    }
+
+    .progress-bars {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .portfolio-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+}
+
+/* For devices between 576px and 767px (Mobile landscape) */
+@media screen and (max-width: 767px) and (min-width: 576px) {
+    .section {
+        padding: 3rem 5rem;
+    }
+
+    .header-content {
+        grid-template-columns: 1fr;
+    }
+
+    .img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .right-header {
+        margin-left: 0;
+        padding-right: 3rem;
+    }
+
+    .main-title h2 {
+        font-size: 2.5rem;
+    }
+
+    .about-container {
+        padding-top: 2rem;
+        padding-bottom: 3rem;
+    }
+
+    .game-card {
+        border-left: 4px solid var(--highlight-color);
+    }
+
+    .portfolio-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    
+}
+
+
+
+/* For devices smaller than 576px (Mobile Portrait) */
+@media screen and (max-width: 575px) {
+    .section {
+        padding: 2rem;
+    }
+
+    .header-content {
+        grid-template-columns: 1fr;
+    }
+
+    .img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .right-header {
+        padding-right: 2rem;
+    }
+
+    .main-title h2 {
+        font-size: 1.8rem;
+    }
+
+    .game-card {
+        border-left: 2px solid var(--highlight-color);
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-container {
+        padding-top: 1rem;
+        padding-bottom: 2rem;
+    }
+
+    
+}
+
+@media screen and (max-width: 1024px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .right-header {
+        margin-left: 0;
+        padding: 1rem;
+    }
+
+    .img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .name {
+        font-size: 1.8rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .header-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+        gap: 1.5rem;
+        margin: 0;
+    }
+
+    .left-header {
+        margin: 0;
+    }
+
+    .img {
+        width: 180px;
+        height: 180px;
+        margin: 0;
+    }
+
+    .right-header {
+        margin: 0;
+        padding: 0 1rem;
+        text-align: center;
+    }
+
+    .name {
+        font-size: 1.5rem;
+    }
+
+    .btn-cont {
+        margin-top: 1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header-content {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .right-header {
+        margin: 0; /* remove bottom and left margins */
+        padding: 0 1rem;
+        text-align: center;
+    }
+
+    .img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .name {
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .btn-cont {
+        margin-top: 1rem;
+    }
+}
+/* Contact Section Responsive - Tablet & Below */
+@media screen and (max-width: 768px) {
+  .contact {
+    padding: 2rem 1rem;
+  }
+
+  .contact-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .contact-left,
+  .contact-right {
+    width: 100%;
+    padding: 0;
+  }
+
+  .contact-left {
+    text-align: center;
+  }
+
+  .contact-info {
+    margin-bottom: 1rem;
+  }
+
+  .contact-info h3 {
+    font-size: 1.2rem;
+  }
+
+  .contact-info p {
+    font-size: 1rem;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+  }
+
+  .contact-form textarea {
+    height: 120px;
+  }
+
+  .btn-cont {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .btn-cont button,
+  .btn-cont a {
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.75rem;
+  }
+}
+
+/* Extra Small Screens - 480px and below */
+@media screen and (max-width: 480px) {
+  .contact {
+    padding: 1.5rem 0.75rem;
+  }
+  .contact-info h3 {
+    font-size: 1rem;
+  }
+
+  .contact-info p {
+    font-size: 0.9rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.9rem;
+  }
+
+  .btn-cont button,
+  .btn-cont a {
+    font-size: 0.95rem;
+    padding: 0.6rem;
+  }
+}
+/* Base styles */
+.edu-section {
+    padding: 2rem 1rem;
+}
+
+.edu-card {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: var(--card-bg);
+    border-radius: 8px;
+    text-align: left;
+}
+
+.edu-card h3 {
+    font-size: 1rem;
+}
+
+.edu-card p {
+    font-size: 0.9rem;
+}
+
+/* Extra Tiny Devices */
+@media screen and (max-width: 400px) {
+    .edu-section {
+        padding: 1rem 0.5rem;
+    }
+
+    .edu-card {
+        padding: 0.75rem;
+    }
+
+    .edu-card h3 {
+        font-size: 0.95rem;
+    }
+
+    .edu-card p {
+        font-size: 0.85rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 90%;
+  }
+
+  .main-title h2 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .section {
+    padding: 1rem;
+  }
+
+  .header-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .left-header {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .left-header .img img {
+    width: 200px;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .right-header {
+    width: 100%;
+  }
+
+  .right-header h1 {
+    font-size: 1.4rem;
+  }
+
+  .right-header p {
+    font-size: 1rem;
+  }
+
+  .btn-cont {
+    justify-content: center;
+  }
+
+  .about-container {
+    flex-direction: column;
+    
+  }
+
+  .left-about, .right-about {
+    width: 100%;
+    margin-bottom: 1.5rem; 
+  }
+
+  .about-stats .progress-bars {
+    margin-bottom: 1rem;
+  }
+
+  .progress-con {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .prog-text {
+    margin-bottom: 0.3rem;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .game-card video {
+    width: 100%;
+    height: auto;
+  }
+
+  .contact-content-con {
+    flex-direction: column;
+  }
+
+  .left-contact, .right-contact {
+    width: 100%;
+  }
+
+  .input-control {
+    flex-direction: column;
+  }
+
+  .input-control input {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .submit-btn {
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  .submit-btn .btn-text, .submit-btn .btn-icon {
+    display: inline-block;
+    font-size: 1rem;
+  }
+}
+@media (max-width: 770px) {
+  /* Example: Buttons inside .btn-cont (header), .game-buttons (projects), .submit-btn (contact form) */
+
+  /* Header Download CV button container */
+  .btn-cont {
+    display: flex !important;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: nowrap;
+  }
+  .btn-cont .main-btn {
+    flex: 1 1 auto;
+    text-align: center;
+    justify-content: center;
+  }
+
+  /* Project buttons container */
+  .game-buttons {
+    display: flex !important;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: nowrap;
+  }
+  .game-buttons .btn {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+
+  /* Contact form submit button */
+  .submit-btn {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* If you want all buttons inside contact form to be horizontal */
+  .contact-form .input-control {
+    flex-direction: column; /* keep inputs stacked */
+  }
+  
+  /* If you have other button groups, add similar styles here */
+}
+
+
+
